@@ -4,4 +4,4 @@ for i in range(10):
         if str(i)+str(j) != '89':
             print("{}{}".format(i, j), end=", ")
         else:
-            print("89\n")
+            print("89")
