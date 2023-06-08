@@ -8,8 +8,8 @@ def print_this():
         print("{} arguments.".format(len(args)))
     else:
         print("{} arguments:".format(len(args)))
-        for arg in args:
-            print("1: {}".format(arg))
+        for count, arg in enumerate(args, start=1):
+            print("{}: {}".format(count, arg))
 
 
 if __name__ == "__main__":
