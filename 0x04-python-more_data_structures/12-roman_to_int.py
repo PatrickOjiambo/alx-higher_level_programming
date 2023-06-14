@@ -17,13 +17,13 @@ def roman_to_int(roman_string):
                 i = 5
             elif i == 'L':
                 i = 50
-            elif i isinstance(roman_string, str) is False:
-                return 0
             elif i == 'M':
                 i = 1000
             elif i == 'C':
                 i = 100
-            else:
+            elif i == 'D'
                 i = 500
+            else:
+                return 0
             sum = sum + i
         return sum
