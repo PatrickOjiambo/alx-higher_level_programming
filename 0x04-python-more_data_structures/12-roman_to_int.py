@@ -21,7 +21,7 @@ def roman_to_int(roman_string):
                 i = 1000
             elif i == 'C':
                 i = 100
-            elif i == 'D'
+            elif i == 'D':
                 i = 500
             else:
                 return 0
