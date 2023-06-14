@@ -1,44 +1,68 @@
 #include <Python.h>
 
-void print_python_list(PyObject *p) {
-    Py_ssize_t size = PyList_Size(p);
-    Py_ssize_t i;
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
 
-    printf("[*] Python list info\n");
-    printf("[*] Size of the Python List = %zd\n", size);
-    printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
+/**
+ * print_python_list - Prints basic info about Python lists.
+ * @p: A PyObject list object.
+ */
+void print_python_list(PyObject *p)
+{
+  int size, alloc, i;
+  const char *type;
+  PyListObject *list = (PyListObject *)p;
+  PyVarObject *var = (PyVarObject *)p;
 
-    for (i = 0; i < size; i++) {
-        printf("Element %zd: %s\n", i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
+  size = var->ob_size;
+  alloc = list->allocated;
+
+  printf("[*] Python list info\n");
+  printf("[*] Size of the Python List = %d\n", size);
+  printf("[*] Allocated = %d\n", alloc);
+
+  for (i = 0; i < size; i++)
+    {
+      type = list->ob_item[i]->ob_type->tp_name;
+      printf("Element %d: %s\n", i, type);
+      if (strcmp(type, "bytes") == 0)
+	print_python_bytes(list->ob_item[i]);
     }
 }
 
-void print_python_bytes(PyObject *p) {
-    Py_ssize_t size;
-    Py_ssize_t i;
-    char *str;
+/**
+ * print_python_bytes - Prints basic info about Python byte objects.
+ * @p: A PyObject byte object.
+ */
+void print_python_bytes(PyObject *p)
+{
+  unsigned char i, size;
+  PyBytesObject *bytes = (PyBytesObject *)p;
 
-    printf("[.] bytes object info\n");
-    if (!PyBytes_Check(p)) {
-        printf("  [ERROR] Invalid Bytes Object\n");
-        return;
+  printf("[.] bytes object info\n");
+  if (strcmp(p->ob_type->tp_name, "bytes") != 0)
+    {
+      printf("  [ERROR] Invalid Bytes Object\n");
+      return;
     }
 
-    size = PyBytes_Size(p);
-    str = PyBytes_AsString(p);
+  printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
+  printf("  trying string: %s\n", bytes->ob_sval);
 
-    printf("  size: %zd\n", size);
-    printf("  trying string: %s\n", str);
+  if (((PyVarObject *)p)->ob_size > 10)
+    size = 10;
+  else
+    size = ((PyVarObject *)p)->ob_size + 1;
 
-    if (size > 10)
-        size = 10;
-
-    printf("  first %zd bytes: ", size);
-    for (i = 0; i < size; i++) {
-        printf("%02x", (unsigned char)str[i]);
-        if (i < size - 1)
-            printf(" ");
+  printf("  first %d bytes: ", size);
+  for (i = 0; i < size; i++)
+    {
+      printf("%02hhx", bytes->ob_sval[i]);
+      if (i == (size - 1))
+	printf("\n");
+      else
+	printf(" ");
     }
-    printf("\n");
 }
+
 
