@@ -14,8 +14,9 @@ def roman_to_int(roman_string):
             i = 1000
         elif i == 'C':
             i = 100
+        elif isinstance(roman_string, str) == False:
+            return None
         else:
             i = 500
-        
         sum = sum + i
     return sum
