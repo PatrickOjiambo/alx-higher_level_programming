@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module defines a Square class that represents a square shape.
 
@@ -5,6 +6,7 @@ Square Class:
     Represents a square defined by its size.
 
 """
+
 
 class Square:
     """
@@ -14,7 +16,7 @@ class Square:
         __size (int): The size of the square.
 
     Methods:
-        __init__(self, size=0): Initializes a Square instance with an optional size.
+        __init__(self, size=0): Initiali with an optional size.
 
     """
 
@@ -36,4 +38,3 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-
