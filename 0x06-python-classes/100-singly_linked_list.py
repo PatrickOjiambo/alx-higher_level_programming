@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This is the python class
+"""
+
+
 class Node:
     """
     Represents a node of a singly linked list.
