@@ -57,6 +57,12 @@ class Square:
     def size(self, value):
         """
         Setter for the size value
+                Args:
+            value (int): The size of the square. Defaults to 0.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
