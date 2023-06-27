@@ -1,72 +1,67 @@
-#!/usr/bin/python3
-"""
-This module defines a Square class that represents a square shape.
-
-Square Class:
-    Represents a square defined by its size.
-
-"""
-
-
 class Square:
     """
-    Represents a square shape.
+    Represents a square.
 
     Attributes:
         __size (int): The size of the square.
 
     Methods:
-        __init__(self, size=0): Initializ with an optional size.
+        __init__(self, size=0): the Square class.
+        area(self): Calculates and returns the area of the square.
 
     """
+
     def __init__(self, size=0):
         """
-        Initializes a Square instance with an optional size.
+        Initializes a new instance of the Square class.
 
         Args:
-            size (int, optional): The size of the square. Defaults to 0.
+            size (int): The size of the square (default 0).
 
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
 
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = 0  # Initialize size with 0 by default
+        self.size = size  # Set the size using the property setter
 
-    def area(self):
-        """
-        calculates the area of the square
-        """
-        size = self.__size
-        area = size * size
-        return area
-
-    @property()
+    @property
     def size(self):
         """
-        Returns the attribute value
+        Retrieves the size of the square.
+
+        Returns:
+            int: The size of the square.
+
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Setter for the size value
-                Args:
-            value (int): The size of the square. Defaults to 0.
+        Sets the size of the square.
+
+        Args:
+            value (int): The size of the square.
 
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
+
         """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
+
+    def area(self):
+        """
+        Calculates and returns the area of the square.
+
+        Returns:
+            int: The area of the square.
+
+        """
+        return self.__size ** 2
