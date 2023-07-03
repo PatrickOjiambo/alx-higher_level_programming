@@ -110,7 +110,7 @@ class Rectangle:
         Returns:
             str: The string representation of the rectangle.
         """
-        if self.width == 0 or sef.height == 0:
+        if self.width or sef.height == 0:
             return ""
         else:
             return "\n".join(["#" * self.width] * self.height)
