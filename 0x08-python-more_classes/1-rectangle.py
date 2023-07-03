@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """
 This file contains the rectangle file.
+This file contains the rectangle file.
+This file contains the rectangle file.
 """
 
 
 class Rectangle:
     """
-    This is the rectangle class.
+    This is the rectangle class with getters, setters
+    and all that stuff
     """
     def __init__(self, width=0, height=0):
         """
@@ -18,17 +21,35 @@ class Rectangle:
 
     @property()
     def height(self):
-        """get the height of the rectangle."""
+        """
+        Getter method for the width attribute.
+
+        Returns:
+            int: The width of the rect.
+        """
         return (self.__height)
 
     @property()
     def width(self):
-        """get the width of the rectangle."""
+        """
+        Getter method for the width attribute.
+
+        Returns:
+            int: The width of the rect.
+        """
         return (self.__width)
 
     @height.setter
     def height(self, value):
-        """Changes the value  of height"""
+        """
+        Setter method for the width attribute.
+
+        Args:
+            value (tuple): The position of the rect.
+
+        Raises:
+            TypeError: If position is not a tuple of 2 positive integers.
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -38,7 +59,15 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Changes the value  of width"""
+        """
+        Setter method for the width attribute.
+
+        Args:
+            value (tuple): The position of the rect.
+
+        Raises:
+            TypeError: If position is not a tuple of 2 positive integers.
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
