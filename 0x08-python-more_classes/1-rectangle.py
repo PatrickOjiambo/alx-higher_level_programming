@@ -8,75 +8,76 @@ This file contains the rectangle file.
 
 class Rectangle:
     """
-    This is the rectangle class with getters, setters
-    and all that stuff
+    Represents a rectangle.
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
     """
+
     def __init__(self, width=0, height=0):
         """
-        This is the init function.
-        Args: width, height
-        """
-        self.__width = width
-        self.__height = height
+        Initializes a new instance of the Rectangle class.
 
-    @property()
-    def height(self):
+        Args:
+            width (int, optional): The width of the rectangle. Defaults to 0.
+            height (int, optional): The height of the rectangle. Defaults to 0.
         """
-        Getter method for the width attribute.
+        self.width = width
+        self.height = height
 
-        Returns:
-            int: The width of the rect.
-        """
-        return (self.__height)
-
-    @property()
+    @property
     def width(self):
         """
         Getter method for the width attribute.
 
         Returns:
-            int: The width of the rect.
+            int: The width of the rectangle.
         """
-        return (self.__width)
-
-    @height.setter
-    def height(self, value):
-<<<<<<< HEAD
-        """
-        Setter method for the width attribute.
-
-        Args:
-            value (tuple): The position of the rect.
-
-        Raises:
-            TypeError: If position is not a tuple of 2 positive integers.
-        """
-=======
->>>>>>> 7248a612c45060fbc46e4cd92cbf11087e9aa41f
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        return self.__width
 
     @width.setter
     def width(self, value):
-<<<<<<< HEAD
         """
         Setter method for the width attribute.
 
         Args:
-            value (tuple): The position of the rect.
+            value (int): The width of the rectangle.
 
         Raises:
-            TypeError: If position is not a tuple of 2 positive integers.
+            TypeError: If the width is not an integer.
+            ValueError: If the width is less than 0.
         """
-=======
->>>>>>> 7248a612c45060fbc46e4cd92cbf11087e9aa41f
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
+
+    @property
+    def height(self):
+        """
+        Getter method for the height attribute.
+
+        Returns:
+            int: The height of the rectangle.
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        Setter method for the height attribute.
+
+        Args:
+            value (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If the height is not an integer.
+            ValueError: If the height is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
