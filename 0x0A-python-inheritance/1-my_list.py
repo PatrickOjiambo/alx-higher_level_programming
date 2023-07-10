@@ -11,5 +11,4 @@ class MyList(list):
         """
         prints the list, but sorted (ascending sort)
         """
-        for item in sorted(self):
-            print(item)
+        print(sorted(self))
