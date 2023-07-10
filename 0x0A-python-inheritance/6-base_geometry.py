@@ -8,4 +8,8 @@ class BaseGeometry:
     """
     Class contains some geometry class
     """
-    raise Exception("area() is not implemented")
+    def area(self):
+        """
+        Calculates the area. Maybe it doesn't
+        """
+        raise Exception("area() is not implemented")
