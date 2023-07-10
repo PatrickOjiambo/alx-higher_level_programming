@@ -25,4 +25,4 @@ class Rectangle(BaseGeometry):
         """
         Print the name of this thing.
         """
-        return "[{}] {}/{}".format(self.__class__.__name__, self.width, self.height)
+        return f"[Rectangle] {self.__width}/{self.__height}"
