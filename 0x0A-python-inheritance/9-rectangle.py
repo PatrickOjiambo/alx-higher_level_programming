@@ -25,4 +25,4 @@ class Rectangle(BaseGeometry):
         """
         Print the name of this thing.
         """
-        return "[{}] {}/{}".format(self.__class__.__name__, width, height)
+        return "[{}] {}/{}".format(self.__class__.__name__, self.width, self.height)
