@@ -12,5 +12,5 @@ def read_file(filename=""):
         Filename(str): Contains the file name as string
     """
     with open(filename, 'r') as file:
-        content = file.read().decode('utf8')
+        content = file.read().decode("utf-8")
         print(content)
