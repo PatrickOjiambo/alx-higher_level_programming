@@ -15,6 +15,7 @@ def load_from_json_file(filename):
         filename(str):name of the file to be written
     """
     with open(filename, 'r', encoding='utf-8') as file:
-        content = json.loads(file.read())
-        print(content, end="")
+        content = file.read()
+        final_string = json.loads(content)
+        return final_string
 
