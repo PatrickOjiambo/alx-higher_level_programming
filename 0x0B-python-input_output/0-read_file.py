@@ -12,4 +12,4 @@ def read_file(filename=""):
         Filename(str): Contains the file name as string
     """
     with open(filename, 'r') as file:
-        content = file.read
+        content = file.read()
