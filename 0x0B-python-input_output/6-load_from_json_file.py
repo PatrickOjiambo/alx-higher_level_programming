@@ -18,4 +18,3 @@ def load_from_json_file(filename):
         content = file.read()
         final_string = json.loads(content)
         return final_string
-
