@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const argv = process.argv;
-let value1 = argv[2];
-let value2 = argv[3];
+const value1 = argv[2];
+const value2 = argv[3];
 
-function add(a, b) {
+function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
     return NaN;
   }
