@@ -9,7 +9,7 @@ if (isNaN(argv[2]) || argv.length < 3) {
     for (let j = 0; j < value; j++) {
       output += "X";
     }
-    console.log(output)
-    output = ''
+    console.log(output);
+    output = "";
   }
 }
