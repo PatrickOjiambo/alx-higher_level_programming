@@ -1,5 +1,5 @@
 #!/usr/bin/node
 exports.addMeMaybe = function (number, theFunction) {
-  let newNumber = number + 1;
+  const newNumber = number + 1;
   theFunction(newNumber);
 };
