@@ -1,0 +1,1 @@
+Closures, Scope and Object Oriented Javascript.
