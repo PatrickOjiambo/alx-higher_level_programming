@@ -10,8 +10,8 @@ if __name__ == '__main__':
 		cur = db.cursor()
 		cur.execute('SELECT id, name FROM states ORDER BY id')
 		rows = cur.fetchall()
-		for (id_, name) in rows:
-			print(f"({id_}, {name})")
+		for row in rows:
+			print(row)
 		cur.close()
 		db.close()
 	except MySQLdb.Error(not Warning) as e:
