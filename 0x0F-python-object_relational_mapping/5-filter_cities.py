@@ -14,8 +14,9 @@ if __name__ == '__main__':
             'SELECT name FROM cities WHERE state_id = (SELECT id FROM\
             states WHERE name = %s)', (state_searched, ))
         rows = cur.fetchall()
-        for row in rows:
-            print(", ".join(row))
+        names = [row[0] for row in rows]
+        result = ", ".join(names)
+        print(result)
         cur.close()
         db.close()
     except MySQLdb.Error(not Warning) as e:
