@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This file retrieves all the states from the database"""
 import MySQLdb
 import sys
 if __name__ == '__main__':
