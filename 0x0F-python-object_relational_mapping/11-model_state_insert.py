@@ -19,4 +19,5 @@ if __name__ == '__main__':
     session = Session()
     session.add(state_name)
     session.flush()
+    session.commit()
     print(state_name.id)
