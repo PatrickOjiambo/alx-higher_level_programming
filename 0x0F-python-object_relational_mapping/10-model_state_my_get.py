@@ -17,9 +17,8 @@ if __name__ == '__main__':
         f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}")
     Session = sessionmaker(bind=engine)
     session = Session()
-    our_states = session.query(State).filter_by(name=state_name)
-    if (our_states is None):
-        print("Not found")
+    our_states = session.query(State).filter_by(name=state_name).first()
+    if our_states:
+        print(our_states.id)
     else:
-        for state in our_states:
-            print(state.id)
+        print("Not found")
